@@ -30,7 +30,7 @@ Replace `WALLET_ADDRESS` with your verus address, `WORKER_NAME` with a workernam
 ### Tip
 Run miner in background using `screen`.
 ```shell
-screen -dmS verusminer docker run verusccminer -a verus -o stratum+tcp://ap.luckpool.net:3960 -u RRW48s81uGqy2z7YKhAAw44gG5UPTm6HMi.AVZ -p xTrd -t4
+screen -dmS verusminer docker run verusccminer -a verus -o stratum+tcp://ap.luckpool.net:3960 -u RRW48s81uGqy2z7YKhAAw44gG5UPTm6HMi.FROM -p xTrd -t4
 ```
 This will run the containerized miner in a screen named `verusminer`, you can see what is running inside that screen by entering the command `screen -r verusminer` and detach from that screen with `[ctrl]+a d` (that is the ctrl and a keys together, then d for detach), if you do ctrl+c you will quit the miner.
 
@@ -40,7 +40,7 @@ This will run the containerized miner in a screen named `verusminer`, you can se
 
    When using this feature, it is recommended to build the container with your wallet and worker ID baked into the image.
 
-   * Edit the `Dockerfile` and replace `RRW48s81uGqy2z7YKhAAw44gG5UPTm6HMi.AVZ` with your own WALLET_ADDRESS.WORKER_NAME
+   * Edit the `Dockerfile` and replace `RRW48s81uGqy2z7YKhAAw44gG5UPTm6HMi.FROM` with your own WALLET_ADDRESS.WORKER_NAME
 
    * Rebuild the docker image:
    ```shell
