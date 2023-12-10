@@ -10,8 +10,9 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git && \
-    cd ccminer && \
+RUN wget https://github.com/monkins1010/ccminer/archive/refs/tags/v3.8.3a.zip && \
+    unzip v3.8.3a.zip && \
+    cd v3.8.3a && \
     chmod +x build.sh configure.sh autogen.sh && \
     ./build.sh && \
     cd .. && \
