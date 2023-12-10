@@ -11,7 +11,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget https://github.com/monkins1010/ccminer/archive/refs/tags/v3.8.3a.zip && unzip v3.8.3a.zip && \
-    cd v3.8.3a && \
+    cd ccminer-3.8.3a && \
     chmod +x build.sh configure.sh autogen.sh && \
     ./build.sh && \
     cd .. && \
