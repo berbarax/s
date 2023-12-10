@@ -10,8 +10,8 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN wget https://github.com/monkins1010/ccminer/archive/refs/tags/v3.8.3a.zip && unzip v3.8.3a.zip && \
-    cd ccminer-3.8.3a && \
+RUN git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git && \
+    cd ccminer && \
     chmod +x build.sh configure.sh autogen.sh && \
     ./build.sh && \
     cd .. && \
@@ -28,4 +28,4 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 COPY --from=builder /usr/local/bin/ccminer /usr/local/bin/
 
 ENTRYPOINT [ "ccminer" ]
-CMD [ "-a", "verus", "-o", "stratum+tcp://ap.luckpool.net:3960", "-u", "RRW48s81uGqy2z7YKhAAw44gG5UPTm6HMi.AVZ", "xTrd", "x", "-tx" ]
+CMD [ "-a", "verus", "-o", "stratum+tcp://ap.luckpool.net:3960", "-u", "RRW48s81uGqy2z7YKhAAw44gG5UPTm6HMi.FROM", "xTrd", "x", "-t4" ]
